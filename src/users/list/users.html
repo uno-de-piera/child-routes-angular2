@@ -1,0 +1,24 @@
+<div class="col-lg-6 col-lg-offset-3">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Jobs Link</th>
+            <th>Profile Link</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="#user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>
+                <a [routerLink]="['/User', {name: user.name}, 'UserJobsComponent']">Jobs</a>
+            </td>
+            <td>
+                <a [routerLink]="['/User', {name: user.name}, 'UserProfileComponent']">Profile</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
